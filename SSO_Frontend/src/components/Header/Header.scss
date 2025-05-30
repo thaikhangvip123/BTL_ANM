@@ -1,0 +1,293 @@
+.topnav {
+    overflow: hidden;
+    background-color: white;
+
+    a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+    a:hover {
+    background-color: #ddd;
+    color: white;
+    }
+
+    a.active {
+        background-color: #04AA6D;
+        color: white;
+      }
+
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Tắt thanh cuộn */
+}
+
+/* Dropdown wrapper container */
+.dropdown-wrapper {
+  display: flex;
+  align-items: center; /* Căn chỉnh theo chiều dọc */
+  background-color: white; /* Nền trắng khi không hover */
+  border: 1px solid rgba(2,72,121,1); /* Viền màu xanh đen */
+  border-radius: 20px; /* Bo góc cho cả container */
+  padding: 5px 15px; /* Padding xung quanh các phần tử */
+  transition: all 0.3s ease; /* Thêm hiệu ứng chuyển đổi khi hover */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-weight: 500;
+  height: 45px;
+  width: 200px;
+  justify-content: flex-start; /* Chia khoảng cách giữa chữ và dấu dropdown */
+  position: relative;
+}
+
+/* Hiệu ứng hover trên wrapper */
+.dropdown-wrapper:hover {
+  background-color: rgba(2,72,121,1); /* Nền xanh đen khi hover */
+  color: white; /* Màu chữ trắng khi hover */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Bóng đổ cho toàn bộ wrapper */
+  border: 1px solid rgba(255,255,255,1);
+}
+
+/* Cấu hình cho dropdown toggle */
+.dropdown-wrapper .dropdown-toggle {
+  display: flex;
+  align-items: center; /* Căn giữa chữ và icon theo chiều dọc */
+  justify-content: flex-start; /* Căn chữ sang trái */
+  font-size: 16px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: fade;
+  white-space: nowrap;
+  flex-grow: 1; /* Đảm bảo tên có thể mở rộng */
+  max-width: 130px; /* Giới hạn chiều rộng tên */
+  padding-right: 20px; /* Khoảng cách giữa tên và icon */
+}
+
+/* Cấu hình màu chữ trong dropdown khi hover */
+.dropdown-wrapper:hover .dropdown-toggle {
+  color: white; /* Đổi màu chữ thành trắng khi hover vào dropdown */
+}
+
+/* Hover trên mục của dropdown */
+.dropdown-wrapper .dropdown-menu .dropdown-item:hover {
+  background-color: #f1f1f1;
+  color: rgba(2,72,121,1); /* Màu chữ khi hover trên các mục */
+}
+
+/* Style cho phần tử dropdown */
+.navbar .dropdown-toggle {
+  background-color: transparent; /* Nền trong suốt */
+  color: rgba(2,72,121,1); /* Màu chữ khi không hover */
+  border: none; /* Loại bỏ viền mặc định */
+  font-weight: 500; /* Độ đậm chữ mặc định */
+  height: 45px; /* Đảm bảo dropdown chiếm toàn bộ chiều cao của wrapper */
+  display: flex;
+  transition: all 0.3s ease; /* Thêm hiệu ứng chuyển đổi khi hover */
+  align-items: center; /* Căn chỉnh chữ theo chiều dọc */
+  justify-content: space-between; /* Chia khoảng cách giữa chữ và dấu dropdown */
+  padding-right: 10px; /* Tạo khoảng cách giữa chữ và dấu dropdown */
+}
+
+/* Cấu hình cho icon */
+.navbar .dropdown-toggle::after {
+  margin-left: 10px; /* Khoảng cách giữa chữ và icon */
+  font-size: 20px; /* Kích thước icon */
+  position: absolute;
+  right: -20px; /* Căn phải icon */
+  top: 50%;
+  transform: translateY(-50%); /* Căn giữa icon theo chiều dọc */
+}
+
+/* Style cho các mục trong dropdown */
+.dropdown-wrapper .dropdown-menu {
+  right: 0 !important; /* Căn phải dropdown */
+  left: auto !important; /* Vô hiệu hóa căn trái */
+  width: 150px; /* Chiều rộng của dropdown */
+  max-height: 300px; /* Chiều cao tối đa của dropdown */
+  text-align: left; /* Căn chữ về bên trái */
+  border-radius: 8px; /* Bo góc */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+  transition: all 0.3s ease; 
+  padding: 10px 0; /* Khoảng cách trên dưới */
+  font-size: 14px; /* Cỡ chữ */
+  background-color: #ffffff; /* Màu nền */
+  border: 1px solid #e0e0e0; /* Đường viền nhạt */
+}
+
+/* Style cho các item trong dropdown */
+.dropdown-wrapper .dropdown-menu .dropdown-item {
+  display: flex; /* Sử dụng flexbox để căn giữa */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  padding: 8px 12px; /* Tăng khoảng cách padding cho từng item */
+  color: #333; /* Màu chữ */
+  transition: background-color 0.2s ease, color 0.2s ease; /* Hiệu ứng hover mượt */
+  font-size: 16px; /* Cỡ chữ */
+  font-family: 'Poppins', sans-serif; /* Font Poppins */
+}
+
+/* Màu nền và chữ khi hover trên các mục trong dropdown */
+.dropdown-wrapper .dropdown-menu .dropdown-item:hover {
+  background-color: #f1f1f1; /* Màu nền khi hover */
+  font-weight: 500;
+  color: rgba(2,72,121,1); /* Màu chữ xanh đậm khi hover */
+}
+
+/* Hiệu ứng cho mũi tên trong dropdown */
+.dropdown-toggle::after {
+  margin-left: 10px; /* Cách xa mũi tên khỏi chữ */
+  font-size: 12px; /* Chỉnh kích thước mũi tên */
+}
+
+/* Tùy chỉnh các mục dropdown khi hover */
+.dropdown-item:hover {
+  background-color: #333; /* Màu nền khi hover */
+  font-weight: 500;
+  color: rgba(2,72,121,1); /* Màu chữ khi hover */
+}
+
+/* Style cho thẻ wrapper chứa dropdown và chữ */
+.navbar-nav .nav-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  padding: 10px 15px; /* Điều chỉnh padding */
+}
+
+.logo {
+    width: 50px;  /* Điều chỉnh chiều rộng */
+    height: auto;  /* Giữ tỷ lệ hình ảnh */
+    display: block;  /* Đảm bảo hình ảnh được hiển thị như một block */
+    margin: 0 auto;  /* Căn giữa hình ảnh */
+    margin-right: 10px;
+}
+
+/* Second Navbar */
+.main-container {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  gap: 20px; /* Khoảng cách giữa các phần tử con */
+  height: calc(100vh - 56px); /* Chiều cao của màn hình trừ đi chiều cao Navbar */
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px; /* Tăng thêm padding cho nội dung */
+  background-color: rgba(193, 230, 255, 0.2);
+  color: rgba(2, 72, 121, 1);
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 0;
+  position: fixed;
+  height: 55px;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font-size: 12px;
+  color: #333;
+  box-shadow: none;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.left-panel {
+  flex: 0.55; /* Chiếm 70% chiều rộng */
+  padding: 20px;
+  display: flex;
+  height: 80%;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.9); /* Màu nền nhạt */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+  border-radius: 10px; /* Bo góc */
+  border-right: 2px solid rgba(2, 72, 121, 0.2); /* Đường gạch phân cách bên phải */
+}
+
+.introduction-panel {
+  padding: 10px 10px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-divider {
+  margin: 10px 0px; /* Khoảng cách giữa đường và nội dung */
+  border: none;
+  border-top: 1px solid rgba(2, 72, 121, 0.5); /* Đường gạch ngang màu xanh nhạt */
+}
+
+.introduction-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.introduction-list li {
+  margin-bottom: 10px;
+  font-size: 14px; /* Kích thước chữ nhỏ gọn */
+  color: rgba(2, 72, 121, 0.8); /* Màu chữ xanh nhạt */
+}
+
+.introduction-list strong {
+  font-weight: 600; /* Tô đậm chữ */
+  color: rgba(2, 72, 121, 1); /* Màu xanh đậm */
+}
+
+.sidebar {
+  flex: 0.35; /* Chiếm 30% chiều rộng */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px; /* Bo góc */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-left: 2px solid rgba(2, 72, 121, 0.2);
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center; /* Căn giữa icon và text theo chiều dọc */
+  padding: 10px 15px; /* Khoảng cách giữa các mục */
+  text-decoration: none;
+  color: rgba(2, 72, 121, 1); /* Màu chữ mặc định */
+  border-radius: 8px; /* Bo góc */
+  transition: all 0.3s ease;
+}
+
+.sidebar-item:hover {
+  background-color: rgba(2, 72, 121, 0.1); /* Nền khi hover */
+  color: rgba(2, 72, 121, 0.9); /* Màu chữ khi hover */
+}
+
+.sidebar-icon {
+  width: 30px; /* Kích thước icon */
+  height: 30px; /* Kích thước icon */
+  margin-right: 10px; /* Khoảng cách giữa icon và text */
+}
+
+.sidebar-text {
+  font-size: 16px; /* Kích thước chữ */
+  font-weight: 500; /* Độ đậm chữ */
+  font-family: 'Poppins', sans-serif;
+}
+
+.member-group {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các tên xuống dòng */
+}
+
+.member-group span {
+  margin-right: 45px; /* Khoảng cách giữa các tên */
+  margin-bottom: 5px; /* Khoảng cách giữa các tên nếu chúng xuống dòng */
+}
